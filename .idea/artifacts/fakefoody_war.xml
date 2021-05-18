@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="fakefoody:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>fakefoody</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="fakefoody-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="fakefoody:war exploded" />
+    </root>
+  </artifact>
+</component>
