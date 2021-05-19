@@ -52,6 +52,26 @@ public class Dish {
         this.price = price;
     }
 
+    public Dish() {
+
+    }
+
+    @Override
+    public String toString() {
+        return "Dish{" +
+                "id=" + id +
+                ", code='" + code + '\'' +
+                ", name='" + name + '\'' +
+                ", CategoryId=" + CategoryId +
+                ", Description='" + Description + '\'' +
+                ", Avatar='" + Avatar + '\'' +
+                ", price=" + price +
+                ", status=" + status +
+                ", sellDate=" + sellDate +
+                ", updatedAt=" + updatedAt +
+                '}';
+    }
+
     public String getName() {
         return name;
     }

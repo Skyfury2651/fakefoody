@@ -16,12 +16,127 @@
     <link rel="stylesheet" href="http://7oroof.com/demos/babette/assets/css/libraries.css" type="text/css">
     <link rel="stylesheet" href="http://7oroof.com/demos/babette/assets/css/style.css" type="text/css">
 </head>
-<body style="background-image: url('http://7oroof.com/demos/babette/assets/images/backgrounds/6.jpg')">
+<body style="background-image: url('http://7oroof.com/demos/babette/assets/images/backgrounds/8.jpg')">
+<header id="header" class="header header-transparent header-layout1">
+    <nav class="navbar navbar-expand-lg sticky-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="http://7oroof.com/demos/babette/assets/images/logo/logo-light.png" class="logo-light" alt="logo">
+                <img src="http://7oroof.com/demos/babette/assets/images/logo/logo-dark.png" class="logo-dark" alt="logo">
+            </a>
+            <button class="navbar-toggler" type="button">
+                <span class="menu-lines"><span></span></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNavigation">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav__item with-dropdown">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle nav__item-link active">Home</a>
+                        <ul class="dropdown-menu">
+                            <li class="nav__item"><a href="index.html" class="nav__item-link">Home Main</a></li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="home-gourmet.html" class="nav__item-link">Home Gourmet</a></li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="home-classic.html" class="nav__item-link">Home Classic</a></li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="home-cafe.html" class="nav__item-link">Home Cafe</a></li>
+                            <!-- /.nav-item -->
+                        </ul><!-- /.dropdown-menu -->
+                    </li><!-- /.nav-item -->
+                    <li class="nav__item with-dropdown">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle nav__item-link">About</a>
+                        <ul class="dropdown-menu">
+                            <li class="nav__item"><a href="our-story.html" class="nav__item-link">About Us</a></li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="our-chefs.html" class="nav__item-link">Our chefs</a></li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="our-guestbook.html" class="nav__item-link">Our Guestbook</a></li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="contacts.html" class="nav__item-link">Contact Us</a></li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="events.html" class="nav__item-link">Events</a></li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="event-single.html" class="nav__item-link">Event Single</a></li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="faqs.html" class="nav__item-link">FAQs</a></li> <!-- /.nav-item -->
+                        </ul><!-- /.dropdown-menu -->
+                    </li><!-- /.nav-item -->
+                    <li class="nav__item with-dropdown">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle nav__item-link">Menu</a>
+                        <ul class="dropdown-menu">
+                            <li class="nav__item"><a href="menu-classic.html" class="nav__item-link">Menu Classic</a></li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="menu-mixed.html" class="nav__item-link">Menu Mixed</a></li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="menu-board.html" class="nav__item-link">Menu Board</a></li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="menu-gallery.html" class="nav__item-link">Menu Gallery</a></li>
+                            <!-- /.nav-item -->
+                        </ul><!-- /.dropdown-menu -->
+                    </li><!-- /.nav-item -->
+                    <li class="nav__item with-dropdown">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle nav__item-link">Gallery</a>
+                        <ul class="dropdown-menu">
+                            <li class="nav__item"><a href="gallery-grid.html" class="nav__item-link">Gallery grid</a></li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="gallery-fullwidth.html" class="nav__item-link">Gallery Fullwidth</a>
+                            </li><!-- /.nav-item -->
+                        </ul><!-- /.dropdown-menu -->
+                    </li><!-- /.nav-item -->
+                    <li class="nav__item with-dropdown">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle nav__item-link">Blog</a>
+                        <ul class="dropdown-menu">
+                            <li class="nav__item"><a href="blog-carousel.html" class="nav__item-link">blog carousel</a></li>
+                            <li class="nav__item dropdown-submenu">
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle nav__item-link">Blog Grid</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav__item">
+                                        <a href="blog-grid-sidebar.html" class="nav__item-link">Grid Sidebar</a>
+                                    </li><!-- /.nav-item -->
+                                    <li class="nav__item">
+                                        <a href="blog-grid.html" class="nav__item-link">No Sidebar</a>
+                                    </li><!-- /.nav-item -->
+                                </ul><!-- /.dropdown-menu -->
+                            </li><!-- /.nav-item -->
+                            <li class="nav__item"><a href="blog-standard.html" class="nav__item-link">blog standard</a></li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="blog-single-post.html" class="nav__item-link">single post</a></li>
+                            <!-- /.nav-item -->
+                        </ul><!-- /.dropdown-menu -->
+                    </li><!-- /.nav-item -->
+                    <li class="nav__item with-dropdown">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle nav__item-link">Shop</a>
+                        <ul class="dropdown-menu">
+                            <li class="nav__item"><a href="shop.html" class="nav__item-link">our Shop</a></li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="shop-sidebar.html" class="nav__item-link">Shop with Sidebar</a></li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="shop-single-product.html" class="nav__item-link">Single Product</a>
+                            </li><!-- /.nav-item -->
+                            <li class="nav__item"><a href="shopping-cart.html" class="nav__item-link">cart</a></li>
+                            <!-- /.nav-item -->
+                        </ul><!-- /.dropdown-menu -->
+                    </li><!-- /.nav-item -->
+                    <!-- /.nav-item -->
+                </ul><!-- /.navbar-nav -->
+            </div><!-- /.navbar-collapse -->
+            <div class="navbar-actions-wrap">
+                <div class="navbar-actions d-flex align-items-center">
+                    <a href="#" class="navbar__action-btn search-popup-trigger"><i class="fa fa-search"></i></a>
+                    <a href="reservation.html" class="navbar__action-btn navbar__action-btn-reserve btn btn__primary">Reservation</a>
+                    <ul class="social__icons">
+                        <li><a href="#"><i class="fa fa-tripadvisor"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    </ul><!-- /.social__icons -->
+                </div><!-- /.navbar-actions -->
+            </div><!-- /.navbar-actions-wrap -->
+        </div><!-- /.container -->
+    </nav><!-- /.navabr -->
+</header>
 <div class="container">
     <%
-        Dish dish = (Dish) request.getAttribute("student");
+        Dish dish = (Dish) request.getAttribute("dish");
         if (dish == null) {
-            dish = new Dish("","", 0, "", "", 0);
+            dish = new Dish("", "", 0, "", "", 0);
         }
         HashMap<String, ArrayList<String>> errors = (HashMap<String, ArrayList<String>>) request.getAttribute("errors");
         if (errors == null) {
@@ -50,7 +165,7 @@
                 </div><!-- /.reservation__banner -->
             </div><!-- /.col-lg-5 -->
             <div class="col-sm-12 col-md-12 col-lg-7">
-                <form class="reservation__form">
+                <form class="reservation__form" id="dish_form" method="post" action="/dish/create">
                     <div class="row">
                         <div class="col-12">
                             <div class="reservation__form-heading  mb-30">
@@ -68,7 +183,8 @@
                         <!-- /.col-lg-6 -->
                         <div class="col-sm-6 col-md-6 col-lg-6">
                             <div class="form-group">
-                                <input type="text" name="code" class="form-control" placeholder="Food Code">
+                                <input type="text" name="code" class="form-control" placeholder="Food Code"
+                                       value="<%=dish.getCode() %>">
                                 <span class="error-msg">
                                     <%
                                         if (errors.containsKey("code")) {
@@ -84,7 +200,8 @@
                         </div><!-- /.col-lg-6 -->
                         <div class="col-sm-6 col-md-6 col-lg-6">
                             <div class="form-group">
-                                <input type="text" name="name" class="form-control" placeholder="Food Name">
+                                <input type="text" name="name" class="form-control" placeholder="Food Name"
+                                       value="<%=dish.getName() %>">
                                 <span class="error-msg">
                                     <%
                                         if (errors.containsKey("name")) {
@@ -101,14 +218,18 @@
                         <div class="col-sm-6 col-md-6 col-lg-6">
                             <div class="form-group">
                                 <select class="form-control" style="display: none;" name="categoryId">
-                                    <option value="1">Món nướng</option>
-                                    <option value="2">Món luộc</option>
-                                    <option value="3">Món chay</option>
-                                    <option value="4">Ðồ uống</option>
+                                    <option value="1" <% if (dish.getCategoryId() == 1) { %> selected <%} %>>Món nướng
+                                    </option>
+                                    <option value="2" <% if (dish.getCategoryId() == 2) { %> selected <%} %>>Món luộc
+                                    </option>
+                                    <option value="3" <% if (dish.getCategoryId() == 3) { %> selected <%} %>>Món chay
+                                    </option>
+                                    <option value="4" <% if (dish.getCategoryId() == 4) { %> selected <%} %>>Ðồ uống
+                                    </option>
                                 </select>
                                 <span class="error-msg">
                                     <%
-                                        if (errors.containsKey("name")) {
+                                        if (errors.containsKey("category_id")) {
                                             ArrayList<String> fullNameErrors = errors.get("category_id");
                                             for (String msg : fullNameErrors) {
                                     %>
@@ -121,7 +242,7 @@
                         </div>
                         <div class="col-sm-6 col-md-6 col-lg-6">
                             <div class="form-group">
-                                <input type="number" class="form-control" placeholder="Food Price">
+                                <input type="number" class="form-control" placeholder="Food Price" name="price" value="<%=dish.getPrice() %>">
                                 <span class="error-msg">
                                     <%
                                         if (errors.containsKey("price")) {
@@ -144,11 +265,12 @@
                         <div class="col-sm-6 col-md-6 col-lg-6">
                             <div class="form-group">
                                 <img src="#" id="demo-img" style="display: none">
+                                <div class="thumbnails"></div>
                             </div>
                         </div><!-- /.col-lg-6 -->
                         <div class="col-sm-12 col-md-12 col-lg-12">
                             <div class="form-group">
-                                <textarea name="description" class="form-control"></textarea>
+                                <textarea name="description" class="form-control"><%=dish.getDescription() %></textarea>
                                 <span class="error-msg">
                                     <%
                                         if (errors.containsKey("price")) {
@@ -171,27 +293,39 @@
         </div><!-- /.row -->
     </div><!-- /.row -->
 </div>
-<script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+
 <script src="http://7oroof.com/demos/babette/assets/js/jquery-3.3.1.min.js" type="text/javascript"></script>
 <script src="http://7oroof.com/demos/babette/assets/js/plugins.js"></script>
 <script src="http://7oroof.com/demos/babette/assets/js/main.js" type="text/javascript"></script>
+<script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
 <script type="text/javascript">
-    var myWidget = cloudinary.createUploadWidget({
+    var myWidget = cloudinary.createUploadWidget(
+        {
             cloudName: 'dwarrion',
             uploadPreset: 'j6d3dypu',
-        }, (error, result) => {
+            multiple: true,
+            form: '#dish_form',
+            fieldName: 'thumbnails[]',
+            thumbnails: '.thumbnails'
+        }, function (error, result) {
             if (!error && result && result.event === "success") {
-                console.log('Done! Here is the image info: ', result.info);
-                $("#image").val(result.info.public_id)
-                $("#demo-img").attr('src', "https://res.cloudinary.com/dwarrion/image/upload/c_limit,h_300,w_900/" + result.info.public_id)
-                $("#demo-img").css('display', 'block')
+                console.log('Done! Here is the image info: ', result.info.url);
+                var arrayThumnailInputs = document.querySelectorAll('input[name="thumbnails[]"]');
+                for (let i = 0; i < arrayThumnailInputs.length; i++) {
+                    arrayThumnailInputs[i].value = arrayThumnailInputs[i].getAttribute('data-cloudinary-public-id');
+                }
+                console.log(arrayThumnailInputs)
             }
         }
-    )
-
-    document.getElementById("upload_widget").addEventListener("click", function () {
+    );
+    $('#upload_widget').click(function () {
         myWidget.open();
-    }, false);
+    })
+    // xử lý js trên dynamic content.
+    $('body').on('click', '.cloudinary-delete', function () {
+        let publicId = JSON.parse($(this).parent().attr('data-cloudinary')).public_id;
+        $(`input[data-cloudinary-public-id="${publicId}"]`).remove();
+    });
 </script>
 </body>
 </html>
