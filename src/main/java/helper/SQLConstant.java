@@ -12,6 +12,7 @@ public class SQLConstant {
     public static final String VALUES = "VALUES";
     public static final String QUOTE = "'";
     public static final String SELECT_ASTERISK = "SELECT *";
+    public static final String SELECT = "SELECT";
     public static final String FROM = "FROM";
     public static final String PRIMITIVE_INT = "int";
     public static final String PRIMITIVE_STRING = "String";

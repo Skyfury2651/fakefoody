@@ -134,8 +134,6 @@
 </header>
 <main id="content" class="content" role="main">
     <!-- Page content -->
-
-
     <div class="row">
         <div class="col-lg-12">
             <section class="widget">
@@ -223,9 +221,6 @@
             </section>
         </div>
     </div>
-
-
-
 </main>
 
 <script src="http://7oroof.com/demos/babette/assets/js/jquery-3.3.1.min.js" type="text/javascript"></script>
