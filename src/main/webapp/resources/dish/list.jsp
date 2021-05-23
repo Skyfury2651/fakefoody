@@ -165,7 +165,7 @@
                             <nav aria-label="Page navigation example">
                                 <ul class="pagination" style="align-content: center">
                                     <li class="page-item"><a class="page-link" href="dish?pages=<%=currentPage - 1%>"
-                                                             style="width: fit-content">Previous</a>
+                                                             style="width: fit-content"  <% if(currentPage == 1 ){ %> <%= "disable" %> <%} %>>Previous</a>
                                     </li>
                                     <%
                                         for (int i = 0; i < totalPage; i++) {
@@ -190,7 +190,7 @@
                                         }
                                     %>
                                     <li class="page-item"><a class="page-link" href="dish?pages=<%=currentPage +1%>"
-                                                             style="width: fit-content">Next</a></li>
+                                                             style="width: fit-content" <% if(currentPage == totalPage ){ %> <%= "disable" %> <%} %>>Next</a></li>
                                 </ul>
                             </nav>
                         </div>
