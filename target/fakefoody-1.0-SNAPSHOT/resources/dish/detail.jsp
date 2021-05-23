@@ -21,25 +21,114 @@
     <nav class="navbar navbar-expand-lg sticky-navbar">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <img src="http://7oroof.com/demos/babette/assets/images/logo/logo-light.png" class="logo-light"
-                     alt="logo">
-                <img src="http://7oroof.com/demos/babette/assets/images/logo/logo-dark.png" class="logo-dark"
-                     alt="logo">
+                <img src="http://7oroof.com/demos/babette/assets/images/logo/logo-light.png" class="logo-light" alt="logo">
+                <img src="http://7oroof.com/demos/babette/assets/images/logo/logo-dark.png" class="logo-dark" alt="logo">
             </a>
             <button class="navbar-toggler" type="button">
                 <span class="menu-lines"><span></span></span>
             </button>
             <div class="collapse navbar-collapse" id="mainNavigation">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav__item">
-                        <a href="/dish/create"  class="nav__item-link ">Create</a>
+                    <li class="nav__item with-dropdown">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle nav__item-link active">Home</a>
+                        <ul class="dropdown-menu">
+                            <li class="nav__item"><a href="index.html" class="nav__item-link">Home Main</a></li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="home-gourmet.html" class="nav__item-link">Home Gourmet</a></li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="home-classic.html" class="nav__item-link">Home Classic</a></li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="home-cafe.html" class="nav__item-link">Home Cafe</a></li>
+                            <!-- /.nav-item -->
+                        </ul><!-- /.dropdown-menu -->
                     </li><!-- /.nav-item -->
-                    <li class="nav__item">
-                        <a href="/dish"  class="nav__item-link active">List</a>
+                    <li class="nav__item with-dropdown">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle nav__item-link">About</a>
+                        <ul class="dropdown-menu">
+                            <li class="nav__item"><a href="our-story.html" class="nav__item-link">About Us</a></li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="our-chefs.html" class="nav__item-link">Our chefs</a></li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="our-guestbook.html" class="nav__item-link">Our Guestbook</a></li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="contacts.html" class="nav__item-link">Contact Us</a></li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="events.html" class="nav__item-link">Events</a></li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="event-single.html" class="nav__item-link">Event Single</a></li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="faqs.html" class="nav__item-link">FAQs</a></li> <!-- /.nav-item -->
+                        </ul><!-- /.dropdown-menu -->
+                    </li><!-- /.nav-item -->
+                    <li class="nav__item with-dropdown">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle nav__item-link">Menu</a>
+                        <ul class="dropdown-menu">
+                            <li class="nav__item"><a href="menu-classic.html" class="nav__item-link">Menu Classic</a></li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="menu-mixed.html" class="nav__item-link">Menu Mixed</a></li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="menu-board.html" class="nav__item-link">Menu Board</a></li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="menu-gallery.html" class="nav__item-link">Menu Gallery</a></li>
+                            <!-- /.nav-item -->
+                        </ul><!-- /.dropdown-menu -->
+                    </li><!-- /.nav-item -->
+                    <li class="nav__item with-dropdown">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle nav__item-link">Gallery</a>
+                        <ul class="dropdown-menu">
+                            <li class="nav__item"><a href="gallery-grid.html" class="nav__item-link">Gallery grid</a></li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="gallery-fullwidth.html" class="nav__item-link">Gallery Fullwidth</a>
+                            </li><!-- /.nav-item -->
+                        </ul><!-- /.dropdown-menu -->
+                    </li><!-- /.nav-item -->
+                    <li class="nav__item with-dropdown">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle nav__item-link">Blog</a>
+                        <ul class="dropdown-menu">
+                            <li class="nav__item"><a href="blog-carousel.html" class="nav__item-link">blog carousel</a></li>
+                            <li class="nav__item dropdown-submenu">
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle nav__item-link">Blog Grid</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav__item">
+                                        <a href="blog-grid-sidebar.html" class="nav__item-link">Grid Sidebar</a>
+                                    </li><!-- /.nav-item -->
+                                    <li class="nav__item">
+                                        <a href="blog-grid.html" class="nav__item-link">No Sidebar</a>
+                                    </li><!-- /.nav-item -->
+                                </ul><!-- /.dropdown-menu -->
+                            </li><!-- /.nav-item -->
+                            <li class="nav__item"><a href="blog-standard.html" class="nav__item-link">blog standard</a></li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="blog-single-post.html" class="nav__item-link">single post</a></li>
+                            <!-- /.nav-item -->
+                        </ul><!-- /.dropdown-menu -->
+                    </li><!-- /.nav-item -->
+                    <li class="nav__item with-dropdown">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle nav__item-link">Shop</a>
+                        <ul class="dropdown-menu">
+                            <li class="nav__item"><a href="shop.html" class="nav__item-link">our Shop</a></li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="shop-sidebar.html" class="nav__item-link">Shop with Sidebar</a></li>
+                            <!-- /.nav-item -->
+                            <li class="nav__item"><a href="shop-single-product.html" class="nav__item-link">Single Product</a>
+                            </li><!-- /.nav-item -->
+                            <li class="nav__item"><a href="shopping-cart.html" class="nav__item-link">cart</a></li>
+                            <!-- /.nav-item -->
+                        </ul><!-- /.dropdown-menu -->
                     </li><!-- /.nav-item -->
                     <!-- /.nav-item -->
                 </ul><!-- /.navbar-nav -->
             </div><!-- /.navbar-collapse -->
+            <div class="navbar-actions-wrap">
+                <div class="navbar-actions d-flex align-items-center">
+                    <a href="#" class="navbar__action-btn search-popup-trigger"><i class="fa fa-search"></i></a>
+                    <a href="reservation.html" class="navbar__action-btn navbar__action-btn-reserve btn btn__primary">Reservation</a>
+                    <ul class="social__icons">
+                        <li><a href="#"><i class="fa fa-tripadvisor"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    </ul><!-- /.social__icons -->
+                </div><!-- /.navbar-actions -->
+            </div><!-- /.navbar-actions-wrap -->
         </div><!-- /.container -->
     </nav><!-- /.navabr -->
 </header>
@@ -76,7 +165,7 @@
                 </div><!-- /.reservation__banner -->
             </div><!-- /.col-lg-5 -->
             <div class="col-sm-12 col-md-12 col-lg-7">
-                <form class="reservation__form" id="dish_form" method="post" action="/dish/create">
+                <div class="reservation__form" id="dish_form">
                     <div class="row">
                         <div class="col-12">
                             <div class="reservation__form-heading  mb-30">
@@ -112,7 +201,7 @@
                         <div class="col-sm-6 col-md-6 col-lg-6">
                             <div class="form-group">
                                 <input type="text" name="name" class="form-control" placeholder="Food Name"
-                                       value="<%=dish.getName() %>">
+                                       value="<%=dish.getName() %>" readonly>
                                 <span class="error-msg">
                                     <%
                                         if (errors.containsKey("name")) {
@@ -128,7 +217,7 @@
                         </div><!-- /.col-lg-6 -->
                         <div class="col-sm-6 col-md-6 col-lg-6">
                             <div class="form-group">
-                                <select class="form-control" style="display: none;" name="categoryId">
+                                <select class="form-control" style="display: none;" name="categoryId" readonly>
                                     <option value="1" <% if (dish.getCategoryId() == 1) { %> selected <%} %>>Món nướng
                                     </option>
                                     <option value="2" <% if (dish.getCategoryId() == 2) { %> selected <%} %>>Món luộc
@@ -153,7 +242,7 @@
                         </div>
                         <div class="col-sm-6 col-md-6 col-lg-6">
                             <div class="form-group">
-                                <input type="number" class="form-control" placeholder="Food Price" name="price" value="<%=dish.getPrice() %>">
+                                <input type="number" class="form-control" placeholder="Food Price" name="price" readonly value="<%=dish.getPrice() %>">
                                 <span class="error-msg">
                                     <%
                                         if (errors.containsKey("price")) {
@@ -169,8 +258,8 @@
                         </div><!-- /.col-lg-6 -->
                         <div class="col-sm-6 col-md-6 col-lg-6">
                             <div class="form-group">
-                                <button type="button" id="upload_widget" class="cloudinary-button">Upload files</button>
-                                <input type="hidden" name="image" id="image">
+                                <button type="button" id="upload_widget" class="cloudinary-button" disabled>Upload files</button>
+                                <input type="hidden" name="image" id="image" readonly>
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-6 col-lg-6">
@@ -181,7 +270,7 @@
                         </div><!-- /.col-lg-6 -->
                         <div class="col-sm-12 col-md-12 col-lg-12">
                             <div class="form-group">
-                                <textarea name="description" class="form-control"><%=dish.getDescription() %></textarea>
+                                <textarea name="description" class="form-control" readonly><%=dish.getDescription() %></textarea>
                                 <span class="error-msg">
                                     <%
                                         if (errors.containsKey("price")) {
@@ -196,10 +285,10 @@
                             </div>
                         </div><!-- /.col-lg-12 -->
                         <div class="col-sm-12 col-md-12 col-lg-12">
-                            <button type="submit" class="btn btn__primary btn__block">Create</button>
+                            <a href="/dish" type="submit" class="btn btn__primary btn__block">Back to list</a>
                         </div><!-- /.col-lg-12 -->
                     </div><!-- /.row -->
-                </form>
+                </div>
             </div><!-- /.col-lg-7 -->
         </div><!-- /.row -->
     </div><!-- /.row -->
@@ -214,7 +303,7 @@
         {
             cloudName: 'dwarrion',
             uploadPreset: 'j6d3dypu',
-            multiple: false,
+            multiple: true,
             form: '#dish_form',
             fieldName: 'thumbnails[]',
             thumbnails: '.thumbnails'

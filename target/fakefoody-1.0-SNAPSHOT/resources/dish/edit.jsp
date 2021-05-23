@@ -10,7 +10,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Create Page</title>
+    <title>Edit Page</title>
     <link href="http://7oroof.com/demos/babette/assets/images/favicon/favicon.png" rel="icon">
     <link rel="stylesheet" href="http://7oroof.com/demos/babette/assets/css/style.css" type="text/css">
     <link rel="stylesheet" href="http://7oroof.com/demos/babette/assets/css/libraries.css" type="text/css">
@@ -53,6 +53,7 @@
         if (errors == null) {
             errors = new HashMap<>();
         }
+        String linkImage = "https://res.cloudinary.com/dwarrion/image/upload/w_100,c_scale/";
     %>
     <div class="reservation__wrapper">
         <div class="row">
@@ -76,7 +77,8 @@
                 </div><!-- /.reservation__banner -->
             </div><!-- /.col-lg-5 -->
             <div class="col-sm-12 col-md-12 col-lg-7">
-                <form class="reservation__form" id="dish_form" method="post" action="/dish/create">
+                <form class="reservation__form" id="dish_form" method="post" action="/dish/edit">
+                    <input type="hidden" name="id" value="<%= dish.getId()%>">
                     <div class="row">
                         <div class="col-12">
                             <div class="reservation__form-heading  mb-30">
@@ -126,7 +128,7 @@
                                 </span>
                             </div>
                         </div><!-- /.col-lg-6 -->
-                        <div class="col-sm-6 col-md-6 col-lg-6">
+                        <div class="col-sm-4 col-md-4 col-lg-4">
                             <div class="form-group">
                                 <select class="form-control" style="display: none;" name="categoryId">
                                     <option value="1" <% if (dish.getCategoryId() == 1) { %> selected <%} %>>Món nướng
@@ -151,7 +153,30 @@
                                 </span>
                             </div>
                         </div>
-                        <div class="col-sm-6 col-md-6 col-lg-6">
+                        <div class="col-sm-4 col-md-4 col-lg-4">
+                            <div class="form-group">
+                                <select class="form-control" style="display: none;" name="status">
+                                    <option value="0" <% if (dish.getStatus() == 0) { %> selected <%} %>>Selling
+                                    </option>
+                                    <option value="1" <% if (dish.getStatus() == 1) { %> selected <%} %>>On wait
+                                    </option>
+                                    <option value="2" <% if (dish.getStatus() == 2) { %> selected <%} %>>Stop
+                                    </option>
+                                </select>
+                                <span class="error-msg">
+                                    <%
+                                        if (errors.containsKey("status")) {
+                                            ArrayList<String> fullNameErrors = errors.get("status");
+                                            for (String msg : fullNameErrors) {
+                                    %>
+                                    <li><%=msg%></li>
+                                    <%
+                                            }
+                                        }%>
+                                </span>
+                            </div>
+                        </div><!-- /.col-lg-6 -->
+                        <div class="col-sm-4 col-md-4 col-lg-4">
                             <div class="form-group">
                                 <input type="number" class="form-control" placeholder="Food Price" name="price" value="<%=dish.getPrice() %>">
                                 <span class="error-msg">
@@ -170,15 +195,19 @@
                         <div class="col-sm-6 col-md-6 col-lg-6">
                             <div class="form-group">
                                 <button type="button" id="upload_widget" class="cloudinary-button">Upload files</button>
-                                <input type="hidden" name="image" id="image">
+                                <input type="hidden" name="thumbnails[]" id="oldThumb" value="<%=dish.getAvatar()%>">
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-6 col-lg-6">
                             <div class="form-group">
                                 <img src="#" id="demo-img" style="display: none">
-                                <div class="thumbnails"></div>
+                                <div class="thumbnails">
+
+                                </div>
+                                <div id="oldImage" style="width: 100px; height: 100px; background-repeat: no-repeat; background-position: center; background-size: cover; background-image:
+                                        url('<%=linkImage + dish.getAvatar() + ".jpg"%>')"></div>
                             </div>
-                        </div><!-- /.col-lg-6 -->
+                        </div>
                         <div class="col-sm-12 col-md-12 col-lg-12">
                             <div class="form-group">
                                 <textarea name="description" class="form-control"><%=dish.getDescription() %></textarea>
@@ -196,7 +225,7 @@
                             </div>
                         </div><!-- /.col-lg-12 -->
                         <div class="col-sm-12 col-md-12 col-lg-12">
-                            <button type="submit" class="btn btn__primary btn__block">Create</button>
+                            <button type="submit" class="btn btn__primary btn__block">Update</button>
                         </div><!-- /.col-lg-12 -->
                     </div><!-- /.row -->
                 </form>
@@ -226,6 +255,8 @@
                     arrayThumnailInputs[i].value = arrayThumnailInputs[i].getAttribute('data-cloudinary-public-id');
                 }
                 console.log(arrayThumnailInputs)
+                $("#oldImage").remove();
+                $("#oldThumb").remove();
             }
         }
     );

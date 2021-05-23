@@ -13,6 +13,7 @@ public class Dish {
     @Column(columnName = "id", columnType = "int")
     private int id;
 
+    @Validate(required = true, min = 5 , requiredMessage = "Code can't be empty")
     @Column(columnName = "code", columnType = "varchar(255)")
     private String code;
 
@@ -43,6 +44,9 @@ public class Dish {
     @Column(columnName = "updated_at", columnType = "date")
     private Date updatedAt;
 
+    @Column(columnName = "deleted_at", columnType = "date" , auto = false)
+    private Date deleteAt;
+
     public Dish(String code, String name, int categoryId, String description, String avatar, double price) {
         this.code = code;
         this.name = name;
@@ -54,6 +58,40 @@ public class Dish {
 
     public Dish() {
 
+    }
+
+    public Date getDeleteAt() {
+        return deleteAt;
+    }
+
+    public void setDeleteAt(Date deleteAt) {
+        this.deleteAt = deleteAt;
+    }
+
+    public Dish(int id, String code, String name, int categoryId, String description, String avatar, double price, int status) {
+        this.id = id;
+        this.code = code;
+        this.name = name;
+        CategoryId = categoryId;
+        Description = description;
+        Avatar = avatar;
+        this.price = price;
+        this.status = status;
+    }
+
+    public String toStatus(int status) {
+        switch (status) {
+            case 0:
+                return "Selling";
+            case 1:
+                return "On wait";
+            case 2:
+                return "Stop";
+            case 3:
+                return "Deleted";
+            default:
+                return "Unknown";
+        }
     }
 
     @Override

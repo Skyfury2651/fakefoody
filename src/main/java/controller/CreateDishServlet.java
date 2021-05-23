@@ -33,11 +33,11 @@ public class CreateDishServlet extends HttpServlet {
 
         Dish dish = new Dish(code, name, categoryId, description, thumbnails, price);
         System.out.println(dish);
-        GenericValidateClass<Dish> accountGenericValidateClass = new GenericValidateClass<>(Dish.class);
-        accountGenericValidateClass.validate(dish);
-        if(!accountGenericValidateClass.validate(dish)){
+        GenericValidateClass<Dish> dishGenericValidateClass = new GenericValidateClass<>(Dish.class);
+        dishGenericValidateClass.validate(dish);
+        if(!dishGenericValidateClass.validate(dish)){
             System.out.println("Have Error");
-            HashMap<String, ArrayList<String>> errors = accountGenericValidateClass.getErrors();
+            HashMap<String, ArrayList<String>> errors = dishGenericValidateClass.getErrors();
             System.out.println(errors);
             req.setAttribute("errors", errors);
             req.setAttribute("dish", dish);
@@ -46,7 +46,6 @@ public class CreateDishServlet extends HttpServlet {
         }
         DishService dishService = new DishService();
         dishService.createDish(dish);
-        super.doPost(req, resp);
-        resp.sendRedirect("/resources/dish/list");
+        resp.sendRedirect("/dish");
     }
 }

@@ -60,6 +60,9 @@ public class GenericModel<T> {
                         continue;
                     }
                 }
+                if (!columnInfor.auto()){
+                    continue;
+                }
                 strQuery.append(columnInfor.columnName()); // nối tên trường.
                 strQuery.append(SQLConstant.COMMON); //,
                 strQuery.append(SQLConstant.SPACE); //
@@ -159,6 +162,7 @@ public class GenericModel<T> {
         stringQuery.append(page * perPage);
         stringQuery.append(SQLConstant.COMMON);
         stringQuery.append(perPage);
+        System.out.println(stringQuery.toString());
         try {
             PreparedStatement preparedStatement = ConnectionHelper.getConnection().prepareStatement(stringQuery.toString());
             // thực thi câu lệnh select * from.
@@ -187,6 +191,9 @@ public class GenericModel<T> {
                             break;
                         case SQLConstant.PRIMITIVE_DOUBLE:
                             field.set(obj, resultSet.getDouble(columnInfor.columnName()));
+                            break;
+                        case SQLConstant.DATE:
+                            field.set(obj,resultSet.getDate(columnInfor.columnName()));
                             break;
                     }
                 }
@@ -272,6 +279,9 @@ public class GenericModel<T> {
                         case SQLConstant.PRIMITIVE_DOUBLE:
                             field.set(obj, resultSet.getDouble(columnInfor.columnName()));
                             break;
+                        case SQLConstant.DATE:
+                            field.set(obj,resultSet.getDate(columnInfor.columnName()));
+                            break;
                     }
                 }
                 // đối tượng obj kiểu T đã có đầy đủ giá trị.
@@ -311,6 +321,9 @@ public class GenericModel<T> {
             // lấy thông tin column để check tên trường, kiểu giá trị của trường.
             // Không lấy danh sách column theo tên field mà lấy theo annotation đặt tại field đó.
             Column columnInfor = field.getAnnotation(Column.class);
+            if (!columnInfor.auto()){
+                continue;
+            }
             // check xem trường có phải là id không.
             if (!field.isAnnotationPresent(Id.class)) {
                 strQuery.append(columnInfor.columnName()); // nối tên trường.
@@ -319,13 +332,13 @@ public class GenericModel<T> {
                 strQuery.append(SQLConstant.SPACE); //
                 // nhanh trí, xử lý luôn phần value, tránh sử dụng 2 vòng lặp.
                 // check kiểu của trường, nếu là string thì thêm dấu '
-                if (field.getType().getSimpleName().equals(String.class.getSimpleName())) {
+                if (field.getType().getSimpleName().equals(String.class.getSimpleName())  || field.getType().getSimpleName().equals(Date.class.getSimpleName()) || field.getType().getSimpleName().equals(double.class.getSimpleName())) {
                     strQuery.append(SQLConstant.QUOTE);
                 }
                 strQuery.append(field.get(obj));
 //                    fieldValues.append(field.get(obj)); // field.setAccessible(true);
                 // check kiểu của trường, nếu là string thì thêm dấu '
-                if (field.getType().getSimpleName().equals(String.class.getSimpleName())) {
+                if (field.getType().getSimpleName().equals(String.class.getSimpleName())  || field.getType().getSimpleName().equals(Date.class.getSimpleName()) || field.getType().getSimpleName().equals(double.class.getSimpleName())) {
                     strQuery.append(SQLConstant.QUOTE);
                 }
                 strQuery.append(SQLConstant.COMMON); // nối giá trị các trường vào.
@@ -496,6 +509,9 @@ public class GenericModel<T> {
                             break;
                         case SQLConstant.PRIMITIVE_DOUBLE:
                             field.set(obj, resultSet.getDouble(columnInfor.columnName()));
+                            break;
+                        case SQLConstant.DATE:
+                            field.set(obj,resultSet.getDate(columnInfor.columnName()));
                             break;
                     }
                 }

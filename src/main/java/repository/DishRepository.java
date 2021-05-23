@@ -25,7 +25,7 @@ public class DishRepository {
 
     public Dish getDetailDish(String name) {
         HashMap<String, SqlCondition> condition = new HashMap<>();
-        condition.put("email", new SqlCondition('=', name));
+        condition.put("id", new SqlCondition('=', name));
 
         return genericModel.findByColumns(condition);
     }

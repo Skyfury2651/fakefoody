@@ -20,8 +20,13 @@ public class HMigration {
                 allClasses) {
             registerClass(c);
         }
+        Seeding();
     }
 
+    protected static void Seeding() throws SQLException {
+        String seedData = "INSERT INTO `dish_category` (`name`) VALUES ('Món nướng '), ('Món luộc'), ('Món chay'), ('Đồ uống');";
+        ConnectionHelper.getConnection().createStatement().execute(seedData);
+    }
     public static void registerClass(Class clazz) throws SQLException {
         try {
             // kiểm tra class có được đánh dấu là @Entity hay không?

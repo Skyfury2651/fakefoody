@@ -10,4 +10,6 @@ import java.lang.annotation.Target;
 public @interface Column {
     String columnName();
     String columnType();
+
+    boolean auto() default true;
 }

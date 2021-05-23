@@ -1,6 +1,7 @@
 package service;
 
 import entity.Dish;
+import entity.DishDataReturn;
 import entity.SqlCondition;
 import repository.DishRepository;
 
@@ -13,6 +14,7 @@ import java.util.List;
 public class DishService {
 
     private DishRepository dishRepository = new DishRepository();
+    private HashMap<String, ArrayList<String>> errors = new HashMap<>();
 
     public Dish createDish(Dish dish) {
         System.out.println("start create dish");
@@ -24,39 +26,92 @@ public class DishService {
         return dish;
     }
 
-    public List<Dish> getListDish(int page,int perPage) {
-        System.out.println("start get list dish");
+    public DishDataReturn getListDish(String page, String perPage) {
 
-        int totalItem = dishRepository.getTotalItem().size();
-        int totalPage = totalItem / perPage;
+        try {
+            int ipage = 1;
+            int iperPage = 5;
+            if (page != null) {
+                ipage = Integer.parseInt(page);
+            }
+            if (perPage != null) {
+                iperPage = Integer.parseInt(perPage);
+            }
+            if (iperPage == 0) {
+                iperPage = 5;
+            }
+            if (ipage == 0) {
+                ipage = 1;
+            }
 
-        int currentPage = page;
-        if (page > totalPage){
-            currentPage = totalPage;
+            int totalItem = dishRepository.getTotalItem().size();
+            int totalPage = totalItem / iperPage;
+            if (totalItem % iperPage > 0){
+                totalPage += 1;
+            }
+            int currentPage = ipage;
+            if (ipage > totalPage) {
+                currentPage = totalPage;
+            }
+            System.out.println(currentPage);
+            System.out.println(ipage);
+            ArrayList<Dish> myDish = new ArrayList<Dish>(dishRepository.getListDish(ipage - 1, iperPage));
+
+            DishDataReturn dishDataReturn = new DishDataReturn();
+            dishDataReturn.setListDish(myDish);
+            dishDataReturn.setCurrentPage(currentPage);
+            dishDataReturn.setTotalPages(totalPage);
+
+            return dishDataReturn;
+        } catch (Exception e) {
+            return new DishDataReturn();
         }
-
-        int lastPage = totalPage;
-
-        ArrayList<Dish> myDish =  new ArrayList<Dish>(dishRepository.getListDish(page,perPage));
-
-
-
-        return new ArrayList<>();
     }
 
     public Dish detailDish(String name) {
-        if (name.length() == 0){
+        if (name.length() == 0) {
             name = "";
         }
-
+        System.out.println(name);
         return dishRepository.getDetailDish(name);
     }
 
     public boolean updateDish(String id, Dish obj) throws InstantiationException, IllegalAccessException, SQLException {
-        return dishRepository.update(id,obj);
+        Dish exist = dishRepository.getDetailDish(id);
+        ArrayList<String> bugs = new ArrayList<String>();
+        if (exist == null) {
+            bugs.add("The records no longer existed");
+            errors.put("records", bugs);
+            return false;
+        }
+        obj.setUpdatedAt(new Date(System.currentTimeMillis()));
+        obj.setSellDate(exist.getSellDate());
+
+        dishRepository.update(id, obj);
+        return true;
     }
 
-    public boolean deleteDish(String id) throws SQLException {
-        return dishRepository.delete(id);
+    public boolean deleteDish(String id) throws SQLException, InstantiationException, IllegalAccessException {
+        Dish exist = dishRepository.getDetailDish(id);
+        ArrayList<String> bugs = new ArrayList<String>();
+        if (exist == null) {
+            bugs.add("The records no longer existed");
+            errors.put("records", bugs);
+            return false;
+        }
+        System.out.println(exist.getSellDate());
+        exist.setUpdatedAt(new Date(System.currentTimeMillis()));
+        exist.setDeleteAt(new Date(System.currentTimeMillis()));
+        exist.setStatus(3);
+
+        return dishRepository.update(id,exist);
+    }
+
+    public HashMap<String, ArrayList<String>> getErrors() {
+        return errors;
+    }
+
+    public void setErrors(HashMap<String, ArrayList<String>> errors) {
+        this.errors = errors;
     }
 }
